@@ -16,7 +16,7 @@ Product URL : http://mobile.walmart.com/
 8. Sign out.
 
 ### Setup ###
-1. Clone the repository (add url here)
+1. Clone this repository
 2. Paste chromedriver to root folder (Walmart_Automation/paste here) if you want the test to run in chrome.
 3. Run TestWalmartApplication.java located in the com.test package using junit. 
 4. By default, the test will run in one android and one IOS device on chrome browser. 
