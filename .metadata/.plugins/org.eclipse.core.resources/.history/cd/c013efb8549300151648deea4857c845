@@ -1,0 +1,46 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.locators.WalmartCheckoutPageLocators;
+import com.main.BaseTest;
+
+/*
+ * 
+ * This is the Walmart Checkout Page
+ * This page contains all the actions performed in the Walmart Checkout Page
+ * 
+ */
+
+public class WalmartCheckoutPage extends WalmartCheckoutPageLocators {
+
+	public WalmartCheckoutPage(WebDriver driver) {
+		super(driver);
+
+	}
+
+	public WalmartCheckoutPage validateIfShipToHomeOptionIsSelected()
+			throws InterruptedException {
+		Thread.sleep(3000);
+		Assert.assertTrue(driver.findElement(SHIPTOHOMEBTN).isSelected(),
+				"Ship to home option is not selected");
+		return new WalmartCheckoutPage(driver);
+	}
+	
+	public WalmartCheckoutPage navigateToPaymentPage() throws InterruptedException{
+		driver.findElement(CONTINUEBTN_SHIPPINGMETHOD).click();
+		Thread.sleep(2000);
+		driver.findElement(CONTINUEBTN_SHIPPINGADDRESS).click();
+		return new WalmartCheckoutPage(driver);
+	}
+	
+	public WalmartCheckoutPage validateIfCurrentPageIsPaymentDetailsPage()
+			throws InterruptedException {
+		System.out.println("Curr URL - " +driver.getCurrentUrl());
+		System.out.println("URL from file - "+BaseTest.getWalmartPaymentDetailsPageUrl());
+		Assert.assertTrue(driver.getCurrentUrl().equals(BaseTest.getWalmartPaymentDetailsPageUrl()),
+				"Current page is not the Payment details page");
+		return new WalmartCheckoutPage(driver);
+	}
+}

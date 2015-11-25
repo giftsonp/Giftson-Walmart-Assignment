@@ -1,0 +1,24 @@
+package com.locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+
+/*
+ * 
+ * This is the Walmart checkout page Locators
+ * This page contains all the locators of the checkout page
+ * 
+ */
+
+
+public class WalmartCheckoutPageLocators {
+	
+	public WebDriver driver;
+	
+	protected WalmartCheckoutPageLocators(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public final By SHIPTOHOMEBUTTON = By.id("fulfillment-type-radio-0-0");	
+}

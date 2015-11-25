@@ -1,0 +1,29 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.locators.WalmartCartPageLocators;
+
+/*
+ * 
+ * This is the Walmart Checkout Page
+ * This page contains all the actions performed in the Walmart Checkout Page
+ * 
+ */
+
+public class WalmartCheckoutPage extends WalmartCartPageLocators {
+
+	public WalmartCheckoutPage(WebDriver driver) {
+		super(driver);
+
+	}
+
+	public WalmartCheckoutPage validateIfItemIsPresentInCart()
+			throws InterruptedException {
+		Thread.sleep(1000);
+		Assert.assertTrue(driver.findElement(SHIPTOHOMEBUTTON).isDisplayed(),
+				"The Item is not present in Cart");
+		return new WalmartCheckoutPage(driver);
+	}
+}

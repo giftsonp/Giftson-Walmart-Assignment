@@ -1,0 +1,18 @@
+package com.utils;
+
+import java.io.InputStream;
+
+public class TestUtility {
+	
+	public static String propFile = "/com/properties/testdata.properties";
+	public static String userAgenList = "/com/properties/useragents.properties";
+	
+	
+	public static void loadUserAgents(){
+		InputStream input = TestUtility.class.getClassLoader().getResourceAsStream(userAgenList);
+		
+		
+	}
+	
+
+}

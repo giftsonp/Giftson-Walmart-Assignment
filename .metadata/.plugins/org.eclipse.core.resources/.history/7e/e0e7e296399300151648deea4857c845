@@ -1,0 +1,20 @@
+package com.locators;
+
+import org.openqa.selenium.By;
+
+
+/*
+ * 
+ * This is the Walmart Home page Locators
+ * This page contains all the locators of the home page
+ * 
+ */
+
+
+public class WalmartHomePageLocators {
+	protected CategoriesSectionLocators(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public final By SEARCHBOX = By.cssSelector(".searchbar-overlay.active");	
+}

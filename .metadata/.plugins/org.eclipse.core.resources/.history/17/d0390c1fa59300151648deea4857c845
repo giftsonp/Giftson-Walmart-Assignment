@@ -1,0 +1,82 @@
+package com.test;
+
+import java.io.IOException;
+import java.util.InvalidPropertiesFormatException;
+import java.util.Properties;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+import com.driver.DriverFactory;
+import com.driver.DriverFactory.BrowserType;
+import com.main.BaseTest;
+import com.pages.WalmartHomePage;
+import com.pages.WalmartItemPage;
+import com.utils.TestUtility;
+
+public class TestWalmartApplication extends BaseTest {
+
+	private String useragent;
+	private String key;
+	public static WebDriver driver;
+	public static Properties testDataProps;
+	public static Properties userAgentProps;
+	private static String username;
+	private static String password;
+	// Set useragent browser type
+	private static String useragent1 = "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4";
+	static DriverFactory.BrowserType browser = BrowserType.FIREFOX;
+	private static String keyword = "tv";
+	
+	
+	public TestWalmartApplication(String key, String useragent) throws InvalidPropertiesFormatException, IOException {
+		super(key, useragent);
+		this.useragent = useragent;
+		this.key = key;		
+		// TODO Auto-generated constructor stub
+	}	
+
+	// get driver with above capabilities and set resources
+	@Before
+	public void setup() throws IOException {
+		
+		TestUtility.loadTestDataProperties();
+		testDataProps = TestUtility.getTestDataProperties();		
+		username = testDataProps.getProperty("USERNAME");
+		password = testDataProps.getProperty("PASSWORD");	
+		driver = DriverFactory.getDriver(browser, useragent1);
+	}
+
+	@After
+	public void cleanup() {
+		driver.quit();
+	}
+	
+
+	@Test
+	public void testWalmart() throws InterruptedException {
+		driver.get(getWalmartUrl());
+		WalmartHomePage homePage = new WalmartHomePage(driver);
+		homePage.searchForKeyword(keyword).clickOnFirstItemOnSearchPage()
+				//.addItemToCart()
+				.login(username, password);
+//				.navigateToCartPage()
+//				.validateIfItemIsPresentInCart()
+//				.validateIfItemIsTheOnlyItemInCart()
+//				.clickCheckoutBtnFromCart()
+//				.validateIfShipToHomeOptionIsSelected()
+//				.navigateToPaymentPage()
+//				.validateIfCurrentPageIsPaymentDetailsPage();
+//
+//		WalmartItemPage itemPage = new WalmartItemPage(driver);
+//		itemPage.navigateToCartPage()
+//				.removeItemFromCart()
+//				.validateIfCartIsEmpty()
+//				.logout();
+	}
+
+}

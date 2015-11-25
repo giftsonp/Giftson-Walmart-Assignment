@@ -1,0 +1,47 @@
+package com.driver;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
+
+public class DriverFactory {
+	
+	public enum BrowserType{
+		CHROME, 
+		SAFARI,
+		FIREFOX		
+	}
+	
+	
+	public static WebDriver getDriver(BrowserType browser, String userAgent)
+	{
+		WebDriver driver;
+		switch(browser){
+		
+		case CHROME:
+		System.setProperty("webdriver.chrome.driver", "src//resources//chromedriver");
+		driver = new ChromeDriver();
+		break;
+		
+		case SAFARI:
+		driver = new SafariDriver();
+		break;
+		
+		default:		
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setPreference("general.useragent.override", userAgent);
+		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+		capabilities.setCapability(FirefoxDriver.PROFILE, profile);		
+		Dimension d = new Dimension(420,600);
+		driver = new FirefoxDriver(capabilities);
+		break;
+		}	
+		
+		return driver;
+	}
+
+}

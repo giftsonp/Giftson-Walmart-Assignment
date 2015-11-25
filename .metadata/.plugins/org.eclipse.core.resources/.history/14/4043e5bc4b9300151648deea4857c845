@@ -1,0 +1,27 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+
+import com.locators.WalmartCartPageLocators;
+
+/*
+ * 
+ * This is the Walmart Cart page 
+ * This page contains all the actions performed in the cart page
+ * 
+ */
+
+public class WalmartCartPage extends WalmartCartPageLocators {
+
+	public WalmartCartPage(WebDriver driver) {
+		super(driver);
+
+	}
+	
+	public void validateItemPrenceInCart(){
+		
+		
+		
+	}
+
+}

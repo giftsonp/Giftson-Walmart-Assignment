@@ -1,0 +1,40 @@
+package com.driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.safari.SafariDriver;
+import com.driver.DriverFactory.BrowserType.*;
+
+public class DriverFactory {
+	
+	public enum BrowserType{
+		CHROME, 
+		SAFARI,
+		FIREFOX		
+	}
+	
+	public static WebDriver getDriver(BrowserType browser)
+	{
+		WebDriver driver;
+		switch(browser){
+		
+		case CHROME:
+		System.setProperty("webdriver.chrome.driver", "");
+		driver = new ChromeDriver();
+		break;
+		
+		case SAFARI:
+		driver = new SafariDriver();
+		break;
+		
+		default:
+		driver = new FirefoxDriver();
+		break;
+		}	
+		
+		return driver;
+	}
+
+}

@@ -1,0 +1,64 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.locators.WalmartCartPageLocators;
+
+/*
+ * 
+ * This is the Walmart Cart page 
+ * This page contains all the actions performed in the cart page
+ * 
+ */
+
+public class WalmartCartPage extends WalmartCartPageLocators {
+
+	public WalmartCartPage(WebDriver driver) {
+		super(driver);
+
+	}
+
+	public WalmartCartPage validateIfItemIsPresentInCart()
+			throws InterruptedException {
+		Thread.sleep(2000);
+		Assert.assertTrue(driver.findElement(ITEMLINKID).isDisplayed(),
+				"The Item is not present in Cart");
+		return new WalmartCartPage(driver);
+	}
+
+	public WalmartCartPage validateIfItemIsTheOnlyItemInCart() {
+		Assert.assertTrue(
+				driver.findElement(ITEMCOUNT).getText().equals("1 item."),
+				"There are more than 1 items in the cart");
+		return new WalmartCartPage(driver);
+	}
+
+	public WalmartCheckoutPage clickCheckoutBtnFromCart() {
+		driver.findElement(CHECKOUTBTN).click();
+		return new WalmartCheckoutPage(driver);
+	}
+
+	public WalmartCartPage removeItemFromCart() throws InterruptedException {
+		JavascriptExecutor JSExecute = (JavascriptExecutor) driver;
+		JSExecute.executeScript("window.scrollBy(0,300)", "");
+		driver.findElement(REMOVEBTN).click();
+		Thread.sleep(2000);
+
+		return new WalmartCartPage(driver);
+	}
+
+	public WalmartCartPage validateIfCartIsEmpty() {
+		Assert.assertTrue(
+				driver.findElement(ITEMCOUNT).getText().equals("0 items."),
+				"The cart is not empty");
+		return new WalmartCartPage(driver);
+	}
+
+	public WalmartCartPage logout() {
+		driver.findElement(HAMBURGERBTN).click();
+		driver.findElement(SIGNOUTLINK).click();
+		return new WalmartCartPage(driver);
+	}
+}

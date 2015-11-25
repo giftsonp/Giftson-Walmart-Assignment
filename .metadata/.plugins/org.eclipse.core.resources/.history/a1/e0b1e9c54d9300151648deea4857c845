@@ -1,0 +1,37 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.locators.WalmartCartPageLocators;
+
+/*
+ * 
+ * This is the Walmart Cart page 
+ * This page contains all the actions performed in the cart page
+ * 
+ */
+
+public class WalmartCartPage extends WalmartCartPageLocators {
+
+	public WalmartCartPage(WebDriver driver) {
+		super(driver);
+
+	}
+
+	public WalmartCartPage validateIfItemIsPresentInCart() {
+		Thread.sleep(2000);
+		Assert.assertTrue(driver.findElement(ITEMLINKID).isDisplayed(),
+				"The Item is not present in Cart");
+		return new WalmartCartPage(driver);
+	}
+
+	public WalmartCartPage validateIfItemIsTheOnlyItemInCart() {
+		System.out.println(driver.findElement(ITEMCOUNT).getText().equals("1 item"));
+		System.out.println(driver.findElement(ITEMCOUNT).getText());
+		Assert.assertTrue(
+				driver.findElement(ITEMCOUNT).getText().equals("1 item"),
+				"There is more than 1 item in the cart");
+		return new WalmartCartPage(driver);
+	}
+}

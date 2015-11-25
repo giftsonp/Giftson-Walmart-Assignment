@@ -1,0 +1,20 @@
+package com.utils;
+
+import java.io.InputStream;
+import java.util.Properties;
+
+public class TestUtility {
+	
+	public static String testDayaPropFile = "/com/properties/testdata.properties";
+	public static String userAgenList = "/com/properties/useragents.properties";
+	
+	private static Properties testDataProps = new Properties();
+	private static Properties uaProps = new Properties();
+	
+	public static void loadUserAgents(){
+		InputStream input = TestUtility.class.getClassLoader().getResourceAsStream(userAgenList);
+		uaProps.load(input);		
+	}
+	
+
+}

@@ -1,0 +1,18 @@
+package com.pages;
+
+import com.locators.WalmartHomePageLocators;
+
+/*
+ * 
+ * This is the Walmart Home page 
+ * This page contains all the actions performed in the home page
+ * 
+ */
+
+public class WalmartHomePage extends WalmartHomePageLocators {
+	
+	public WalmartHomePage searchForKeyword(){
+		
+		
+	}
+}

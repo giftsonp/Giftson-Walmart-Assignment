@@ -1,0 +1,28 @@
+package com.pages;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.WebDriver;
+
+import com.locators.WalmartSearchPageLocators;
+
+/*
+ * 
+ * This is the Walmart Search page 
+ * This page contains all the actions of the search page
+ * 
+ */
+
+public class WalmartSearchPage extends WalmartSearchPageLocators {
+	
+	List<WebElement> element=new ArrayList<WebElement>();
+	public WalmartSearchPage(WebDriver driver) {
+		super(driver);
+	}
+	
+	public WalmartSearchPage clickOnFirstItem(String keyword){
+	driver.findElements(RESULTSET).toArray();
+		
+	return new WalmartSearchPage(driver);
+	}
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.remote.BrowserType"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.safari.SafariDriver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.firefox.FirefoxDriver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+<fullyQualifiedTypeName name="org.junit.BeforeClass"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.firefox.FirefoxProfile"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.Dimension"/>
+<fullyQualifiedTypeName name="org.testng.annotations.AfterTest"/>
+<fullyQualifiedTypeName name="org.junit.AfterClass"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+<fullyQualifiedTypeName name="com.pages.WalmartHomePage"/>
+<fullyQualifiedTypeName name="com.pages.WalmartSearchPage"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.JavascriptExecutor"/>
+<fullyQualifiedTypeName name="org.testng.Assert"/>
+<fullyQualifiedTypeName name="com.locators.WalmartCheckoutPageLocators"/>
+<fullyQualifiedTypeName name="com.main.BaseTest"/>
+<fullyQualifiedTypeName name="com.pages.WalmartItemPage"/>
+<fullyQualifiedTypeName name="com.pages.WalmartCartPage"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="com.utils.TestUtility"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="org.junit.After"/>
+<fullyQualifiedTypeName name="org.junit.runners.Parameterized.Parameters"/>
+<fullyQualifiedTypeName name="java.util.InvalidPropertiesFormatException"/>
+<fullyQualifiedTypeName name="com.beust.jcommander.Parameterized"/>
+<fullyQualifiedTypeName name="org.junit.runners.Parameterized"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.driver.DriverFactory"/>
+<fullyQualifiedTypeName name="com.driver.DriverFactory.BrowserType"/>
+</qualifiedTypeNameHistroy>

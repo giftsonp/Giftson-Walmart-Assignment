@@ -1,0 +1,12 @@
+package com.test;
+
+import org.junit.Test;
+
+public class WalmartEndToEndTest {
+	
+	WebDriver driver = new WebDriver();
+	
+	@Test
+	
+
+}

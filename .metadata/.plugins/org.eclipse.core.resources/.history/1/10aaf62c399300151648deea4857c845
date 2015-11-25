@@ -1,0 +1,12 @@
+package com.pages;
+
+/*
+ * 
+ * This is the Walmart Home page 
+ * This page contains all the actions performed in the home page
+ * 
+ */
+
+public class WalmartHomePage extends WalmartHomePageLocators {
+
+}

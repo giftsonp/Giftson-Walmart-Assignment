@@ -1,0 +1,10 @@
+package com.utils;
+
+public class TestUtility {
+	
+	public static String propFile = "/com/properties/testdata.properties";
+	public static String userAgenList = "/com/properties/useragents.properties";
+	
+	
+
+}

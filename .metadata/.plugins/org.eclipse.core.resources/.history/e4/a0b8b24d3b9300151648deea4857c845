@@ -1,0 +1,11 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class WalmartSearchPage {
+	
+	public WalmartSearchPage(WebDriver driver) {
+		super(driver);
+	}
+
+}

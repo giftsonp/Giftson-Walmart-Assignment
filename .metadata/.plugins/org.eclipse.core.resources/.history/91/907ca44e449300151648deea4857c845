@@ -1,0 +1,33 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+import com.locators.WalmartItemPageLocators;
+
+/*
+ * 
+ * This is the Walmart Item page 
+ * This page contains all the actions of the Item page
+ * 
+ */
+
+public class WalmartItemPage extends WalmartItemPageLocators {
+
+	public WalmartItemPage(WebDriver driver) {
+		super(driver);
+	}
+	
+	public WalmartItemPage addItemToCart() throws InterruptedException{
+		Thread.sleep(10000);
+		JavascriptExecutor javascript = (JavascriptExecutor) driver; 
+		javascript.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.partialLinkText("About Yahoo"))); 
+		
+		System.out.println(driver.findElement(ADDTOCARTBTN).isDisplayed());
+		System.out.println(driver.findElement(ADDTOCARTBTN).getText());
+
+		driver.findElement(ADDTOCARTBTN).click();
+		return new WalmartItemPage(driver);
+	}
+
+}

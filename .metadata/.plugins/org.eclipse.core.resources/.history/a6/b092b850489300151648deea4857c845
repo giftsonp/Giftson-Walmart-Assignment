@@ -1,0 +1,33 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+import com.locators.WalmartItemPageLocators;
+
+/*
+ * 
+ * This is the Walmart Item page 
+ * This page contains all the actions of the Item page
+ * 
+ */
+
+public class WalmartItemPage extends WalmartItemPageLocators {
+
+	public WalmartItemPage(WebDriver driver) {
+		super(driver);
+	}
+
+	public WalmartItemPage addItemToCart() throws InterruptedException {
+		Thread.sleep(5000);
+		//scroll down a little to click the button
+		//without scrolling the add to cart button is not clicked. 
+		JavascriptExecutor JSExecute = (JavascriptExecutor) driver;
+		JSExecute.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(1000);
+
+		driver.findElement(ADDTOCARTBTN).click();
+		return new WalmartItemPage(driver);
+	}
+
+}

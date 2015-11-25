@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestWalmartApplication (1)" project="Walmart_Automation" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.TestWalmartApplication" time="22.585">
+    <testsuite name="[IOS]" time="11.852">
+      <testcase name="testWalmart[IOS]" classname="com.test.TestWalmartApplication" time="11.852"/>
+    </testsuite>
+    <testsuite name="[ANDROID]" time="10.733">
+      <testcase name="testWalmart[ANDROID]" classname="com.test.TestWalmartApplication" time="10.733"/>
+    </testsuite>
+  </testsuite>
+</testrun>

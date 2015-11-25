@@ -1,0 +1,32 @@
+package com.main;
+
+public class BaseTest {
+
+	static String url = null;
+
+	public void setupUsers() {
+		String username = "giftsonp@gmail.com";
+		static String password = "Nostfig34";
+	}
+
+	public static String getWalmartUrl() {
+		url = "http://mobile.walmart.com/";
+		return url;
+	}
+
+	public static String getWalmartSignInPageUrl() {
+		url = "https://www.walmart.com/account/login/";
+		return url;
+	}
+
+	public static String getWalmartCartPageUrl() {
+		url = "https://www.walmart.com/cart/";
+		return url;
+	}
+
+	public static String getWalmartPaymentDetailsPageUrl() {
+		url = "https://www.walmart.com/checkout/#checkout/payment";
+		return url;
+	}
+
+}

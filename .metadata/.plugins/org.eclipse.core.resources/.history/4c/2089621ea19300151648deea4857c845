@@ -1,0 +1,38 @@
+package com.main;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
+
+import com.utils.TestUtility;
+
+public class BaseTest {
+
+	static String url = null;
+	
+	public static Collection<Object[]> userAgents() throws IOException{		
+		Object[][] data = TestUtility.getUserAgentStrings();
+		return Arrays.asList(data);
+	}
+
+	public static String getWalmartUrl() {
+		url = "http://mobile.walmart.com/";
+		return url;
+	}
+
+	public static String getWalmartSignInPageUrl() {
+		url = "https://www.walmart.com/account/login/";
+		return url;
+	}
+
+	public static String getWalmartCartPageUrl() {
+		url = "https://www.walmart.com/cart/";
+		return url;
+	}
+
+	public static String getWalmartPaymentDetailsPageUrl() {
+		url = "https://www.walmart.com/checkout/#checkout/payment";
+		return url;
+	}
+
+}

@@ -1,0 +1,43 @@
+package com.utils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class TestUtility {
+
+	public static final String testDataPropFilePath = "com/properties/testdata.properties";
+	public static final String userAgenListPath = "com/properties/useragents.properties";
+
+	private static Properties testDataProps = new Properties();
+	private static Properties uaProps = new Properties();
+
+	public static void loadTestDataProperties() throws IOException {
+		InputStream input = TestUtility.class.getClassLoader()
+				.getResourceAsStream(testDataPropFilePath);
+		testDataProps.load(input);
+	}
+
+	public static void loadUserAgents() throws IOException {
+		InputStream input = TestUtility.class.getClassLoader()
+				.getResourceAsStream(userAgenListPath);
+		uaProps.load(input);
+	}
+
+	public static Properties getTestDataProperties() {
+
+		return testDataProps;
+	}
+	
+	public static Object[][] getUserAgentStrings() throws IOException{
+		uaProps.clear();
+		loadUserAgents();
+		
+		int sizeOfList = uaProps.size();
+		
+		Object[][] data = new Object[sizeOfList][2];
+		
+		return null;		
+	}
+
+}

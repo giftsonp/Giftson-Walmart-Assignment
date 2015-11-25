@@ -1,0 +1,45 @@
+package com.driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.safari.SafariDriver;
+
+public class DriverFactory {
+	
+	public enum BrowserType{
+		CHROME, 
+		SAFARI,
+		FIREFOX		
+	}
+	
+	
+	public static WebDriver getDriver(BrowserType browser, String userAgent)
+	{
+		WebDriver driver;
+		switch(browser){
+		
+		case CHROME:
+		System.setProperty("webdriver.chrome.driver", "src//resources//chromedriver");
+		driver = new ChromeDriver();
+		break;
+		
+		case SAFARI:
+		driver = new SafariDriver();
+		break;
+		
+		default:
+		
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setPreference("general.useragent.override", userAgent);
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap.setCapability(FirefoxDriver.PROFILE, profile);
+		driver = new FirefoxDriver(cap);
+		break;
+		}	
+		
+		return driver;
+	}
+
+}

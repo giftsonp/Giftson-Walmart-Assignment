@@ -1,0 +1,27 @@
+package com.main;
+
+public class BaseTest {
+
+	public static String getWalmartUrl() {
+		String url = "http://mobile.walmart.com/";
+		return url;
+	}
+	
+	public static String getWalmartSignInPageUrl() {
+		String url = "https://www.walmart.com/account/login/";
+		return url;
+	}
+	
+	public static String getWalmartCartPageUrl() {
+		String url = "https://www.walmart.com/cart/";
+		return url;
+	}
+	
+	public static String getWalmartCartPageUrl() {
+		String url = "https://www.walmart.com/checkout/#checkout/payment";
+		return url;
+	}
+	public static 
+	
+	
+}

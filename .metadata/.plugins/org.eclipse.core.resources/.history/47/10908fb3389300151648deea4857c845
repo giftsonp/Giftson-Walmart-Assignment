@@ -1,0 +1,25 @@
+package com.locators;
+
+import org.openqa.selenium.By;
+
+
+/*
+ * 
+ * This is the Walmart Home page Locators
+ * This page contains all the locators of the home page
+ * 
+ */
+
+
+public class WalmartHomePageLocators {
+
+	public final By TITLE = getLocator("TITLE");
+	
+	@Override
+	protected void setLocators() {
+		setLocator(LocatorType.COMMON_LOCATOR, "TITLE",
+				By.cssSelector(".top-categories__title"));
+		
+	}
+	
+}

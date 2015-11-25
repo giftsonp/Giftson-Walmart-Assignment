@@ -1,0 +1,50 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+import com.locators.WalmartItemPageLocators;
+import com.main.BaseTest;
+
+/*
+ * 
+ * This is the Walmart Item page 
+ * This page contains all the actions of the Item page
+ * 
+ */
+
+public class WalmartItemPage extends WalmartItemPageLocators {
+
+	public WalmartItemPage(WebDriver driver) {
+		super(driver);
+	}
+
+	public WalmartItemPage addItemToCart() throws InterruptedException {
+		Thread.sleep(1000);
+		//scroll down a little to click the button
+		//without scrolling the add to cart button is not clicked. 
+		JavascriptExecutor JSExecute = (JavascriptExecutor) driver;
+		JSExecute.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(1000);
+
+		driver.findElement(ADDTOCARTBTN).click();
+		return new WalmartItemPage(driver);
+	}
+	
+	public WalmartItemPage login(String username, String password) throws InterruptedException{
+		Thread.sleep(2000);
+		driver.get(BaseTest.getWalmartSignInPageUrl());
+		driver.findElement(USERNAMEFIELD).sendKeys(username);
+		driver.findElement(PASSWORDFIELD).sendKeys(password);
+		driver.findElement(SIGNINBTN).click();
+		Thread.sleep(2000);
+		return new WalmartItemPage(driver);
+	}
+	
+	public WalmartCartPage navigateToCartPage() throws InterruptedException{
+		driver.get(BaseTest.getWalmartCartPageUrl());
+		Thread.sleep(2000);
+		return new WalmartCartPage(driver);
+	}
+
+}
