@@ -30,7 +30,7 @@ public class TestWalmartApplication extends BaseTest {
 	private static String password;
 	
 	// Set Browser browser type
-	static DriverFactory.BrowserType browser = BrowserType.FIREFOX;
+	static DriverFactory.BrowserType browser = BrowserType.CHROME;
 	private static String keyword = "tv";
 	
 	public TestWalmartApplication(String key, String useragent) throws InvalidPropertiesFormatException, IOException {

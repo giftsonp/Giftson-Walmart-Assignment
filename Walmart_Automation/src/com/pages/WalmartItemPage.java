@@ -27,6 +27,7 @@ public class WalmartItemPage extends WalmartItemPageLocators {
 		JSExecute.executeScript("window.scrollBy(0,200)", "");
 		Thread.sleep(3000);
 		driver.findElement(ADDTOCARTBTN).click();
+		Thread.sleep(3000);
 		return new WalmartItemPage(driver);
 	}
 	

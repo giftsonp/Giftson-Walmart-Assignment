@@ -22,7 +22,7 @@ public class WalmartCheckoutPage extends WalmartCheckoutPageLocators {
 
 	public WalmartCheckoutPage validateIfShipToHomeOptionIsSelected()
 			throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		Assert.assertTrue(driver.findElement(SHIPTOHOMEBTN).isSelected(),
 				"Ship to home option is not selected");
 		return new WalmartCheckoutPage(driver);
