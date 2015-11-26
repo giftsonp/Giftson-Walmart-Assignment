@@ -5,9 +5,7 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -32,7 +30,7 @@ public class TestWalmartApplication extends BaseTest {
 	private static String password;
 	
 	// Set Browser browser type
-	static DriverFactory.BrowserType browser = BrowserType.CHROME;
+	static DriverFactory.BrowserType browser = BrowserType.FIREFOX;
 	private static String keyword = "tv";
 	
 	public TestWalmartApplication(String key, String useragent) throws InvalidPropertiesFormatException, IOException {
@@ -56,6 +54,7 @@ public class TestWalmartApplication extends BaseTest {
 		driver.quit();
 	}
 	
+	//This is the end to end walmart e-commerce mobile flow
 	@Test
 	public void testWalmart() throws InterruptedException {
 		driver.get(getWalmartUrl());

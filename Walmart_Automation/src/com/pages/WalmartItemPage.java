@@ -20,13 +20,12 @@ public class WalmartItemPage extends WalmartItemPageLocators {
 	}
 
 	public WalmartItemPage addItemToCart() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//scroll down a little to click the button
 		//without scrolling the add to cart button is not clicked. 
 		JavascriptExecutor JSExecute = (JavascriptExecutor) driver;
 		JSExecute.executeScript("window.scrollBy(0,200)", "");
-		Thread.sleep(1000);
-
+		Thread.sleep(3000);
 		driver.findElement(ADDTOCARTBTN).click();
 		return new WalmartItemPage(driver);
 	}
