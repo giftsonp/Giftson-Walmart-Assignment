@@ -23,6 +23,10 @@ Product URL : http://mobile.walmart.com/
 5. You can add more user agents to useragents.properties file located in the com.propterties package. 
 6. Change the browser to Firefox or safari from the TestWalmartApplication.java. 
 
+### Technical Choices ###
+* Thread.Sleep() have been added at various places in order to avoid false failures. Specially with chrome browser, due to the speed of execution using selenium, the test often fails resulting in false failures. In ordered to avoid this, Thread.Sleep() was added in places where it was required. However, it is a good practice to avoid this. 
+
+NOTE: In case of test failures, please clear cache cookies from your browser and re-run the tests. Also, since the test is based on items being present or removed from cart for the test user, after a failure, please manually login using the test user credentials (testwalmart10@gmail.com / password) and remove the item from cart and re-run the test. 
 
 ### Design ###
 #### Package Structure ####
